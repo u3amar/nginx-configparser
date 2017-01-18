@@ -54,6 +54,7 @@ TEST_F(NginxConfigParserTest, LeftUnbalancedBraceConfig) {
   ASSERT_FALSE(ParseString(serialized_config));
 }
 
+// Fails on original code
 TEST_F(NginxConfigParserTest, RightUnbalancedBraceConfig) {
   std::string serialized_config = 
     "port 80; }";
@@ -68,6 +69,7 @@ TEST_F(NginxConfigParserTest, BalancedBraceConfig) {
   ASSERT_TRUE(ParseString(serialized_config));
 }
 
+// Fails on original code
 TEST_F(NginxConfigParserTest, UnbalancedBraceConfig) {
   std::string serialized_config = 
     "port { num 80; } dom { test 30; }}";
