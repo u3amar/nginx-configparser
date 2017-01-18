@@ -7,11 +7,11 @@ int main(int argc, char* argv[]) {
     printf("Usage: ./config_parser <path to config file>\n");
     return 1;
   }
-
+  
   NginxConfigParser config_parser;
   NginxConfig config;
   config_parser.Parse(argv[1], &config);
-
+  
   printf("%s", config.ToString().c_str());
   return 0;
 }
